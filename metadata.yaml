@@ -1,0 +1,28 @@
+name: astrbot_plugin_group_welcome
+display_name: "入群欢迎"
+desc: "有人进群时自动发送欢迎语：支持多条模板随机、@ 新成员、延迟发送、AI 个性化文案、群黑白名单与重复欢迎冷却；QQ 官方机器人等拿不到入群事件的平台，会自动用「首次发言」兜底欢迎。"
+short_desc: "新人进群自动欢迎，模板、随机、@、AI 文案都可配"
+version: 1.0.0
+author: "1737979114"
+repo: https://github.com/1737979114/astrbot_plugin_group_welcome
+astrbot_version: ">=4.5.0,<5"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
+  - telegram
+  - wecom
+  - wecom_ai_bot
+  - lark
+  - dingtalk
+  - discord
+  - slack
+  - kook
+  - satori
+  - misskey
+  - line
+tags:
+  - 群欢迎
+  - 入群欢迎
+  - 新成员
+  - 群管理

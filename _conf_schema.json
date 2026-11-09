@@ -1,0 +1,84 @@
+{
+  "enable": {
+    "description": "启用入群欢迎",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后插件不响应任何进群事件"
+  },
+  "first_message_welcome": {
+    "description": "官方机器人：首次发言时欢迎",
+    "type": "bool",
+    "default": true,
+    "hint": "QQ 官方机器人拿不到「有人入群」事件，开启后改为该成员第一次在本群发言时欢迎一次；NapCat 等能收到入群通知的平台不受影响"
+  },
+  "templates": {
+    "description": "欢迎语模板（随机选一条）",
+    "type": "list",
+    "default": [
+      "欢迎 {nickname} 加入本群！有问题随时问，大家都很乐意帮忙。",
+      "{nickname} 来啦，欢迎欢迎，先看下群公告哈。",
+      "欢迎新朋友 {nickname}，祝你在这里聊得开心。"
+    ],
+    "hint": "可用占位符：{nickname} 昵称、{qq} QQ号、{group_id} 群号、{group_name} 群名"
+  },
+  "at_member": {
+    "description": "欢迎时 @ 新成员",
+    "type": "bool",
+    "default": true
+  },
+  "delay_seconds": {
+    "description": "延迟发送（秒）",
+    "type": "int",
+    "default": 2,
+    "hint": "稍微延迟一下更像真人，也能避开入群瞬间的刷屏；设为 0 立即发送"
+  },
+  "cooldown_seconds": {
+    "description": "同一成员重复欢迎冷却（秒）",
+    "type": "int",
+    "default": 300,
+    "hint": "防止协议端重复推送 notice 导致连发多条；设为 0 关闭冷却"
+  },
+  "use_llm": {
+    "description": "用 AI 生成欢迎语",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后优先让模型写一句，失败或超时会自动回退到模板"
+  },
+  "llm_provider_id": {
+    "description": "AI 欢迎语使用的模型",
+    "type": "string",
+    "default": "",
+    "_special": "select_provider",
+    "hint": "留空则使用当前会话的默认模型"
+  },
+  "llm_prompt": {
+    "description": "AI 提示词",
+    "type": "text",
+    "default": "",
+    "hint": "留空使用内置提示词；可改成自己的人格风格"
+  },
+  "max_length": {
+    "description": "欢迎语最大长度（字符）",
+    "type": "int",
+    "default": 120,
+    "hint": "超出会被截断，避免模型输出一大段"
+  },
+  "skip_invite": {
+    "description": "管理员邀请入群时不欢迎",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后只欢迎主动申请入群的成员，避免管理员批量拉人时刷屏"
+  },
+  "whitelist_groups": {
+    "description": "只在这些群生效（留空表示全部群）",
+    "type": "list",
+    "default": [],
+    "hint": "填群号，例如 123456789"
+  },
+  "blacklist_groups": {
+    "description": "这些群不欢迎",
+    "type": "list",
+    "default": [],
+    "hint": "黑名单优先级高于白名单"
+  }
+}
